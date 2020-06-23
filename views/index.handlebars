@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-sm-5">
+    <h2>Burgers Undevoured!</h2>
+    <br>
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devoured=false}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-5">
+    <h2>Burgers you have eaten.</h2>
+    <br>
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block devoured=true}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <br>
+    <h2>Add a Burger</h2>
+    <form class="create-form">
+
+      <div class="form-group">
+        <label for="bu">Burger Name:</label>
+        <input type="text" id="bu" name="name">
+      </div>
+
+      <button type="submit">Add Burger</button>
+    </form>
+  </div>
+  <div class="col-sm-4">
+    <img src="/assets/img/Hamburger-PNG-Picture.png" alt="burger">
+  </div>
+</div>
