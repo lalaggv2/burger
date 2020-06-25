@@ -1,4 +1,4 @@
-USE burgerDB;
+USE burgersDB;
 
 INSERT INTO burgers (burger_name,devoured) VALUES ('The Original',false);
 INSERT INTO burgers (burger_name,devoured) VALUES ('Mushroom Delight',false);
