@@ -1,9 +1,12 @@
-const orm = require("./config/orm.js");
+const orm = require("../config/orm.js");
 
 //const orm = require('orm');
 
-selectAll();
-insertOne();
-updateOne();
+orm.selectAll().then((data) => {
+  console.log(data);
+});
 
-module.exports = burger;
+// insertOne();
+// updateOne();
+
+// module.exports = burger;

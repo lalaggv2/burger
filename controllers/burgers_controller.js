@@ -1,11 +1,11 @@
 const express = require('express');
 
-const burger = require("./models/burger.js");
+const burger = require("../models/burger.js");
 const { Router } = require('express');
-
-Router.length("/", (req, res) => {
-  console.log("it works")
-});
+const router = Router();
+// Router.length("/", (req, res) => {
+//   console.log("it works")
+// });
 
 router.get("/burgers", (req, res) => {
   burger.selectAll(function (burgerData) {

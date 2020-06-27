@@ -16,9 +16,9 @@ const mysql = require("mysql");
 const handlebars = require("express-handlebars");
 
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
-app.set("view engine”, “handlebnodears”);
+app.set("view engine", "handlebars");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8088;
 
 const routes = require("./controllers/burgers_controller.js");
 
@@ -27,6 +27,10 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use("/", routes);
+
+app.listen(PORT, () => {
+  console.log("App listening on 8088")
+})
 
 
 

@@ -17,11 +17,26 @@ const orm = {
       );
     });
   },
+  selectAll: function () {
+    return new Promise((resolve, reject) => {
+      var queryString = 'SELECT * FROM burgers';
+
+      connection.query(
+        queryString,
+        function (err, result) {
+          if (err) {
+            reject(err);
+          }
+          resolve(result);
+        }
+      );
+    });
+  },
 };
 
-selectAll()
-insertOne()
-updateOne()
+// insertOne()
+// updateOne()
+
 
 
 module.exports = orm;
