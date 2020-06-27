@@ -11,26 +11,29 @@
 const express = require('express')
 const app = express();
 require('dotenv').config()
+const PORT = process.env.PORT || 8088;
 
 const mysql = require("mysql");
-const handlebars = require("express-handlebars");
 
+//setting handlebars to use it
+const handlebars = require("express-handlebars");
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-const PORT = process.env.PORT || 8088;
-
-const routes = require("./controllers/burgers_controller.js");
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//sending the static content from the public dir
 app.use(express.static("public"));
 
+//Importing the routes
+const routes = require("./controllers/burgers_controller.js");
 app.use("/", routes);
 
+//starts the server and listening to client requests
 app.listen(PORT, () => {
   console.log("App listening on 8088")
-})
+});
 
 
 
