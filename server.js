@@ -1,5 +1,4 @@
-
-// We will be using the npm package "dotenv" to allow us to use our database credentials but prevent them from beeing pushed to github.  
+// We will be using the npm package "dotenv" to allow us to use our database credentials but prevent them from beeing pushed to github.
 // there are steps to configure dotenv:
 // 1. npm install "dotenv"
 // 2. require the dotenv config as below in the entry point to your app (the server file most likely)
@@ -8,10 +7,10 @@
 // 5. replace the credentials that you would like masked with "process.env.<variable name here>"
 // see the db/dbConnection.js file for an example of how the variables will be implemented.
 // if you have cloned this repo, you will NOT see the .env file, as that is the whole point! You will need to create it per the instructions above
-const express = require('express')
+const express = require("express");
 const app = express();
-require('dotenv').config()
-const PORT = process.env.PORT || 8088;
+require("dotenv").config();
+const PORT = process.env.PORT || 3333;
 
 const mysql = require("mysql");
 
@@ -32,8 +31,5 @@ app.use("/", routes);
 
 //starts the server and listening to client requests
 app.listen(PORT, () => {
-  console.log("App listening on 8088")
+  console.log("App listening on; localhost: " + PORT);
 });
-
-
-
