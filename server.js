@@ -31,5 +31,5 @@ app.use("/", routes);
 
 //starts the server and listening to client requests
 app.listen(PORT, () => {
-  console.log("App listening on; localhost: " + PORT);
+  console.log("AServer listening on: http://localhost:" + PORT);
 });
