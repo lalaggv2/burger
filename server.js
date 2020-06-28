@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Importing the routes
-const routes = require("./controllers/burgers_controller.js");
+const routes = require("./routes");
 app.use("/", routes);
 
 //starts the server and listening to client requests
