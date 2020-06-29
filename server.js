@@ -10,9 +10,7 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const PORT = process.env.PORT || 3333;
-
-const mysql = require("mysql");
+const PORT = process.env.PORT || 4444;
 
 //setting handlebars to use it
 const handlebars = require("express-handlebars");
@@ -26,10 +24,10 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Importing the routes
-const routes = require("./routes");
-app.use("/", routes);
+const routes = require("./controllers/burgers_controller");
+app.use(routes);
 
 //starts the server and listening to client requests
 app.listen(PORT, () => {
-  console.log("AServer listening on: http://localhost:" + PORT);
+  console.log("Server listening on: http://localhost:" + PORT);
 });

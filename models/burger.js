@@ -11,23 +11,23 @@ const orm = require("../config/orm.js");
 
 var burger = {
   selectAll: function (callback) {
-    orm.selectAll("burger", function (res) {
+    orm.selectAll("burgers", function (res) {
       callback(res);
     });
   },
   // The variables cols and vals are arrays.
   insertOne: function (cols, vals, callback) {
-    orm.insertOne("burger", cols, vals, function (res) {
+    orm.insertOne("burgers", cols, vals, function (res) {
       callback(res);
     });
   },
   updateOne: function (objColVals, condition, callback) {
-    orm.updateOne("burger", objColVals, condition, function (res) {
+    orm.updateOne("burgers", objColVals, condition, function (res) {
       callback(res);
     });
   },
   deleteOne: function (condition, callback) {
-    orm.deleteOne("burger", condition, function (res) {
+    orm.deleteOne("burgers", condition, function (res) {
       callback(res);
     });
   },
