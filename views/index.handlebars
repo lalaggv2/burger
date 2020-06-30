@@ -5,6 +5,8 @@
     <ul>
       {{#each burgers}}
       {{#unless devoured}}
+      <span>{{this.id}} {{this.burger_name}}</span>
+      <button type="button" id="eatburger"
       {{burgers/burger-block devoured=false}}
       {{/unless}}
       {{/each}}
