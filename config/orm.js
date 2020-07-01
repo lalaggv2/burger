@@ -13,10 +13,10 @@ function createQuestionMarks(num) {
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(obj) {
   var arr = [];
-  for (var key in ob) {
-    var value = ob[key];
+  for (var key in obj) {
+    var value = obj[key];
     // check to skip hidden properties
-    if (Object.hasOwnProperty.call(ob, key)) {
+    if (Object.hasOwnProperty.call(obj, key)) {
       // if string with spaces, add quotations
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";

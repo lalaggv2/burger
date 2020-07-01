@@ -26,7 +26,7 @@ $(function () {
   //   sleepy: $("[name=devoured]:checked").val().trim()
   // };
   //UPDATE A BURGER CHANGING ITS DEVOURED STATE
-  $("#eatburger").on("click", function (event) {
+  $(".eatburger").on("click", function (event) {
     event.preventDefault();
 
     let id = $(this).data("id");
@@ -41,7 +41,7 @@ $(function () {
       console.log("Burger is devoured");
       // Reload the page to get the updated list
       location.reload();
-    });
+    }).catch(err => console.error(err));
   });
 
   //DELETE A BURGER
