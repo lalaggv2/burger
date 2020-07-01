@@ -1,53 +1,53 @@
 <div class="container">
-<div class="row">
-  <div class="col-sm-5">
-    <h2>Eat Burgers</h2>
-    <br>
-    <ul>
-      {{#each burgers}}
-      {{#unless devoured}}
+  <div class="row">
+    <div class="col-sm-5">
+      <h2>Eat Burgers</h2>
+      <br>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
 
-<form class="create-form">
-        <div class="form-group">
-        <label for="newburger"></label>
+        <form class="create-form">
+          <div class="form-group">
+            <label for="newburger"></label>
             {{!-- <input type="text" id="newburger" name="burger"> --}}
-          <select data-placeholder="" id="newburger" name="burger">
-          <option value="Nothing Selected" selected></option>
-          </select>
+            <select data-placeholder="" id="newburger" name="burger">
+              <option value="Nothing Selected" selected></option>
+            </select>
 
-         <button type="submit" class="btn btn-success" id="addburger">
-        <span class="fa fa-thumbs-up"></span>>
-         </div>
-        </button>
-</form>
-      {{!-- <span>{{this.id}} {{this.burger_name}}</span>
+            <button type="submit" class="btn btn-success" id="addburger">
+              <span class="fa fa-thumbs-up"></span>>
+          </div>
+          </button>
+        </form>
+        {{!-- <span>{{this.id}} {{this.burger_name}}</span>
       <button type="button" id="eatburger" --}}
 
         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-                        <button type="button" class="eatburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
-      {{burgers/burger-block devoured=false}}
-      {{/unless}}
-      {{/each}}
-    </ul>
-  </div>
-  <div class="col-sm-2"></div>
-  <div class="col-sm-5">
-    <h2>Burgers you have eaten.</h2>
-    <br>
-    <ul>
-      {{#each burgers}}
-      {{#if devoured}}
-      <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
-      <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
+        <button type="button" class="eatburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
           data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
-                        <hr>
-      {{burgers/burger-block devoured=true}}
-      {{/if}}
-      {{/each}}
-    </ul>
+        {{burgers/burger-block devoured=false}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-5">
+      <h2>Burgers you have eaten.</h2>
+      <br>
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+        <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
+          data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+        <hr>
+        {{burgers/burger-block devoured=true}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
-</div>
 </div>
 
 <div class="row">
